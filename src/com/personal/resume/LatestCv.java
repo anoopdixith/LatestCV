@@ -29,7 +29,7 @@ import com.personal.education.Masters;
 import com.personal.generic.SoftwareEngineerResumes;
 
 /**
- * This class details all the sections of an applicant's resume.
+ * This class details all the sections of my resume.
  * 
  * @author Anoop Dixith
  * 
