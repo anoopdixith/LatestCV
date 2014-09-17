@@ -75,7 +75,7 @@ public class LatestCv implements SoftwareEngineerResumes {
   Bachelors bachelors = new Bachelors(BACHELORSBRANCH, bachelorsAggregate, bachelorsCompleted);
 
   private final String MASTERSBRANCH = "Computer Science";
-  private Double gpa = 3.918;
+  private Double gpa = 3.906;
   private String specialization = "Artificial Intelligence";
   Masters masters = new Masters(MASTERSBRANCH, gpa, specialization);
 
@@ -129,7 +129,6 @@ public class LatestCv implements SoftwareEngineerResumes {
       this.workExperience.put("CISCO/NDS", professionalProjects.getProperty("cisco"));
       this.workExperience.put("SILICOM", professionalProjects.getProperty("silicom"));
       this.workExperience.put("ZYNGA", professionalProjects.getProperty("zynga"));
-      this.workExperience.put("APPLE", professionalProjects.getProperty("apple"));
       this.workExperience.put("Google/Motorola", professionalProjects.getProperty("google"));
 
       this.workExperience.put("YourCompany", "Something Amazing!");
