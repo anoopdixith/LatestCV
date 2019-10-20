@@ -1,5 +1,5 @@
 /**
- * Copyright 2013 Anoop Dixith
+ * Copyright 2019 Anoop Dixith
  * 
  * Released under the MIT License, whose copy can be obtained at http://opensource.org/licenses/MIT
  * 
@@ -36,7 +36,7 @@ import com.personal.generic.SoftwareEngineerResumes;
  */
 public class LatestCv implements SoftwareEngineerResumes {
 
-  public static Double version = 3.0;
+  public static Double version = 4.0;
   static Logger logger = Logger.getLogger(LatestCv.class);
 
   /**
@@ -46,7 +46,7 @@ public class LatestCv implements SoftwareEngineerResumes {
   class ContactDetails {
     private final String FULLNAME = "Anoop Dixith";
     private final String EMAIL = "dixithanoop@gmail.com";
-    private final Long DATEOFBIRTH = 575539200l; // Unix timestamp (seconds)
+    private final Long DATE_OF_BIRTH = 575539200l; // Unix timestamp (seconds)
 
     public String getFULLNAME() {
       return FULLNAME;
@@ -57,11 +57,11 @@ public class LatestCv implements SoftwareEngineerResumes {
     }
 
     public Long getDATEOFBIRTH() {
-      return DATEOFBIRTH;
+      return DATE_OF_BIRTH;
     }
 
     public Date getReadableDATEOFBIRTH() {
-      return new Date(DATEOFBIRTH * 1000); // Initialization of Date is in ms, timestamp in s.
+      return new Date(DATE_OF_BIRTH * 1000); // Initialization of Date is in ms, timestamp in s.
     }
   }
 
@@ -74,10 +74,10 @@ public class LatestCv implements SoftwareEngineerResumes {
   private final String BACHELORSBRANCH = "Electronics and Communication";
   Bachelors bachelors = new Bachelors(BACHELORSBRANCH, bachelorsAggregate, bachelorsCompleted);
 
-  private final String MASTERSBRANCH = "Computer Science";
+  private final String MASTERS_BRANCH = "Computer Science";
   private Double gpa = 3.906;
   private String specialization = "Artificial Intelligence";
-  Masters masters = new Masters(MASTERSBRANCH, gpa, specialization);
+  Masters masters = new Masters(MASTERS_BRANCH, gpa, specialization);
 
   private Education mostRecentEducation = masters;
 
@@ -91,13 +91,13 @@ public class LatestCv implements SoftwareEngineerResumes {
    * Skills and technologies used.
    */
   public enum SkillSet {
-    JAVA, PYTHON, OBJECTIVE_C, MACHINELEARNING, PHP, JAVASCRIPT, DATASTORE
+    JAVA, SCALA, GOLANG, DATA_ENGINEERING, BIG_DATA, STREAMING_ANALYTICS
   }
   public enum Frameworks {
-    SPRING, HIBERNATE, PLIGG, BOOTSTRAP, JQUERY, APPENGINE
+    KAFKA, APACHE_SPARK, HBASE, HIVE, KSTREAMS, MONGO_DB, KUBERNETES
   }
   public enum ToolsUsed {
-    WEKA, MAHOUT, MAVEN, ECLIPSE
+    GRADLE, MAVEN, DATABRICKS, JUPYTER
   }
 
   /*
@@ -126,15 +126,16 @@ public class LatestCv implements SoftwareEngineerResumes {
       String projectFile = "projectdetails.properties"; // contains company=projectDetails
       InputStream inputStream = getClass().getClassLoader().getResourceAsStream(projectFile);
       professionalProjects.load(inputStream);
-      this.workExperience.put("CISCO/NDS", professionalProjects.getProperty("cisco"));
-      this.workExperience.put("SILICOM", professionalProjects.getProperty("silicom"));
       this.workExperience.put("ZYNGA", professionalProjects.getProperty("zynga"));
-      this.workExperience.put("Google/Motorola", professionalProjects.getProperty("google"));
+      this.workExperience.put("Google", professionalProjects.getProperty("google"));
+      this.workExperience.put("CONVIVA", professionalProjects.getProperty("conviva"));
+      this.workExperience.put("JUNIPER", professionalProjects.getProperty("juniper"));
+      this.workExperience.put("WEWORK", professionalProjects.getProperty("wework"));
 
       this.workExperience.put("YourCompany", "Something Amazing!");
 
     } catch (IOException ioException) {
-      logger.error("Houston, we've had a problem.");
+      logger.error("Houston, we've a problem.");
       ioException.printStackTrace();
     }
 
